@@ -5,25 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POSRI Chatbot</title>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <style>
-        df-messenger {
-            --df-messenger-bot-message: #878fac;
-            --df-messenger-button-titlebar-color: #df9b56;
-            --df-messenger-chat-background-color: #fafafa;
-            --df-messenger-font-color: black;
-            --df-messenger-send-icon: #878fac;
-            --df-messenger-user-message: #479b3d;
-        }
-        df-messenger {
-            display: block;
-            height: 100vh; /* Full viewport height */
-            width: 100vw;  /* Full viewport width */
-        }
-        /* 非表示にするためのスタイル */
-        df-messenger-chat-icon {
-            display: none !important;
-        }
-    </style>
 </head>
 <body>
     <df-messenger
@@ -31,7 +12,6 @@
         chat-title="POSRI"
         agent-id="92cb8dfb-cf44-439d-9735-5f5d355d27b3"
         language-code="ja"
-        expand="true"  <!-- チャットウィンドウを自動的に展開する -->
     ></df-messenger>
 </body>
 </html>
