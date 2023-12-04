@@ -14,20 +14,14 @@
             --df-messenger-send-icon: #878fac;
             --df-messenger-user-message: #479b3d;
         }
-        df-messenger-chat {
-            height: 100% !important;
-            width: 100% !important;
-        }
         df-messenger {
             display: block;
             height: 100vh; /* Full viewport height */
             width: 100vw;  /* Full viewport width */
         }
-        df-messenger df-messenger-chat {
-            display: block !important;
-        }
-        df-messenger df-messenger-chat-icon {
-            display: none !important; /* Hide the chat icon */
+        /* 非表示にするためのスタイル */
+        df-messenger-chat-icon {
+            display: none !important;
         }
     </style>
 </head>
@@ -37,6 +31,7 @@
         chat-title="POSRI"
         agent-id="92cb8dfb-cf44-439d-9735-5f5d355d27b3"
         language-code="ja"
+        expand="true"  <!-- チャットウィンドウを自動的に展開する -->
     ></df-messenger>
 </body>
 </html>
