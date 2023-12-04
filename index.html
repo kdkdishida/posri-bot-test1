@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POSRI Chatbot</title>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <style>
+        df-messenger {
+            --df-messenger-bot-message: #878fac;
+            --df-messenger-button-titlebar-color: #df9b56;
+            --df-messenger-chat-background-color: #fafafa;
+            --df-messenger-font-color: black;
+            --df-messenger-send-icon: #878fac;
+            --df-messenger-user-message: #479b3d;
+        }
+        df-messenger-chat {
+            height: 100% !important;
+            width: 100% !important;
+        }
+        df-messenger {
+            display: block;
+            height: 100vh; /* Full viewport height */
+            width: 100vw;  /* Full viewport width */
+        }
+        df-messenger df-messenger-chat {
+            display: block !important;
+        }
+        df-messenger df-messenger-chat-icon {
+            display: none !important; /* Hide the chat icon */
+        }
+    </style>
 </head>
 <body>
     <df-messenger
