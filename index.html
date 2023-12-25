@@ -19,8 +19,23 @@
             display: none;
         }
 
-        /* スマートフォン用のスタイル */
+        /* スマートフォン用のスタイル（小さい画面サイズから大きい画面サイズへ） */
+        @media screen and (max-width: 480px) {
+            /* 小さい画面サイズ（例：iPhone SE） */
+            df-messenger df-messenger-chat df-messenger-stylesheet df-close-icon {
+                display: none;
+            }
+        }
+
         @media screen and (max-width: 768px) {
+            /* 中サイズの画面（例：iPhone 12, iPhone 14） */
+            df-messenger df-messenger-chat df-messenger-stylesheet df-close-icon {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            /* 大きい画面サイズ */
             df-messenger df-messenger-chat df-messenger-stylesheet df-close-icon {
                 display: none;
             }
