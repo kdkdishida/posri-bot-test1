@@ -18,27 +18,20 @@
         language-code="ja"
         expand="true">
     </df-messenger>
-
     <script>
-        window.addEventListener('load', function() {
-            const dfMessenger = document.querySelector('df-messenger');
-            if (dfMessenger) {
-                // MutationObserverを使用して変更を監視
-                const observer = new MutationObserver((mutations, obs) => {
-                    const shadowRoot = dfMessenger.shadowRoot;
-                    const closeButton = shadowRoot ? shadowRoot.querySelector('[aria-label="close"]') : null;
-                    if (closeButton) {
-                        closeButton.style.display = 'none';
-                        obs.disconnect(); // 必要な変更が見つかったらObserverを停止
-                    }
-                });
-
-                observer.observe(dfMessenger, {
-                    childList: true,
-                    subtree: true
-                });
+      window.addEventListener('load', function() {
+        const dfMessenger = document.querySelector('df-messenger');
+        if (dfMessenger) {
+          // 'loaded' イベントが df-messenger コンポーネントで利用可能か確認
+          dfMessenger.addEventListener('loaded', function() {
+            const shadowRoot = dfMessenger.shadowRoot;
+            const closeButton = shadowRoot ? shadowRoot.querySelector('[aria-label="close"]') : null;
+            if (closeButton) {
+              closeButton.style.display = 'none';
             }
-        });
+          });
+        }
+      });
     </script>
 </body>
 </html>
