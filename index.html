@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <style>
-        df-messenger-titlebar {
-          display: none;
-        }
         df-messenger {
         /*  タイトルバーのタイトルのフォントの色（閉じるボタンも） */
         --df-messenger-button-titlebar-font-color: #ffffff;	
@@ -45,5 +42,8 @@
         language-code="ja"
         expand="true">
     </df-messenger>
+    <script>
+        document.querySelector('df-messenger').shadowRoot.querySelector('df-messenger-titlebar').remove();
+    </script>
 </body>
 </html>
