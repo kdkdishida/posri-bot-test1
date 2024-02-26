@@ -21,15 +21,25 @@
 </body>
 </html>
 <script>
-  document.addEventListener('dfMessengerLoaded', function() {
+  window.addEventListener('load', function() {
     const dfMessenger = document.querySelector('df-messenger');
     if (dfMessenger) {
-      const shadowRoot = dfMessenger.shadowRoot;
-      const closeButton = shadowRoot.querySelector('[aria-label="close"]');
-      if (closeButton) {
-        closeButton.style.display = 'none';
-      }
+      // MutationObserverを使用して変更を監視
+      const observer = new MutationObserver((mutations, obs) => {
+        const shadowRoot = dfMessenger.shadowRoot;
+        const closeButton = shadowRoot ? shadowRoot.querySelector('[aria-label="close"]') : null;
+        if (closeButton) {
+          closeButton.style.display = 'none';
+          obs.disconnect(); // 必要な変更が見つかったらObserverを停止
+        }
+      });
+
+      observer.observe(dfMessenger, {
+        childList: true,
+        subtree: true
+      });
     }
   });
 </script>
+
 
