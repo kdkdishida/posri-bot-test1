@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <style>
+<!--     <style>
         df-messenger {
             --df-messenger-titlebar-text-color: transparent;
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <df-messenger
@@ -18,20 +18,5 @@
         language-code="ja"
         expand="true">
     </df-messenger>
-    <script>
-      window.addEventListener('load', function() {
-        const dfMessenger = document.querySelector('df-messenger');
-        if (dfMessenger) {
-          // 'loaded' イベントが df-messenger コンポーネントで利用可能か確認
-          dfMessenger.addEventListener('loaded', function() {
-            const shadowRoot = dfMessenger.shadowRoot;
-            const closeButton = shadowRoot ? shadowRoot.querySelector('[aria-label="close"]') : null;
-            if (closeButton) {
-              closeButton.style.display = 'none';
-            }
-          });
-        }
-      });
-    </script>
 </body>
 </html>
