@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <style>
-      df-messenger {
-        --df-messenger-titlebar-text-color: transparent;
-      }
+        df-messenger {
+            --df-messenger-titlebar-text-color: transparent;
+        }
     </style>
 </head>
 <body>
@@ -18,28 +18,27 @@
         language-code="ja"
         expand="true">
     </df-messenger>
+
+    <script>
+        window.addEventListener('load', function() {
+            const dfMessenger = document.querySelector('df-messenger');
+            if (dfMessenger) {
+                // MutationObserverを使用して変更を監視
+                const observer = new MutationObserver((mutations, obs) => {
+                    const shadowRoot = dfMessenger.shadowRoot;
+                    const closeButton = shadowRoot ? shadowRoot.querySelector('[aria-label="close"]') : null;
+                    if (closeButton) {
+                        closeButton.style.display = 'none';
+                        obs.disconnect(); // 必要な変更が見つかったらObserverを停止
+                    }
+                });
+
+                observer.observe(dfMessenger, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-<script>
-  window.addEventListener('load', function() {
-    const dfMessenger = document.querySelector('df-messenger');
-    if (dfMessenger) {
-      // MutationObserverを使用して変更を監視
-      const observer = new MutationObserver((mutations, obs) => {
-        const shadowRoot = dfMessenger.shadowRoot;
-        const closeButton = shadowRoot ? shadowRoot.querySelector('[aria-label="close"]') : null;
-        if (closeButton) {
-          closeButton.style.display = 'none';
-          obs.disconnect(); // 必要な変更が見つかったらObserverを停止
-        }
-      });
-
-      observer.observe(dfMessenger, {
-        childList: true,
-        subtree: true
-      });
-    }
-  });
-</script>
-
-
