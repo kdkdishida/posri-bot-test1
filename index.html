@@ -21,10 +21,15 @@
 </body>
 </html>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var closeButton = document.querySelector('df-messenger [aria-label="close"]');
+  document.addEventListener('dfMessengerLoaded', function() {
+    const dfMessenger = document.querySelector('df-messenger');
+    if (dfMessenger) {
+      const shadowRoot = dfMessenger.shadowRoot;
+      const closeButton = shadowRoot.querySelector('[aria-label="close"]');
       if (closeButton) {
         closeButton.style.display = 'none';
       }
-    });
+    }
+  });
 </script>
+
