@@ -43,23 +43,23 @@
         expand="true">
     </df-messenger>
     <script>
-        // const dfMessenger = document.querySelector('df-messenger');
-        // dfMessenger.addEventListener('df-messenger-loaded', function () {
-        //   const shadowRoot = dfMessenger.shadowRoot;
-        //   const titleWrapper = shadowRoot.querySelector('.title-wrapper');
-        //   if (titleWrapper) {
-        //     titleWrapper.style.display = 'none'; // タイトルバーを非表示にする
-        //   }
-        // });
-
         const dfMessenger = document.querySelector('df-messenger');
         dfMessenger.addEventListener('df-messenger-loaded', function () {
           const shadowRoot = dfMessenger.shadowRoot;
-          const titleBar = shadowRoot.querySelector('df-messenger-titlebar');
-          if (titleBar) {
-            titleBar.style.display = 'none'; // タイトルバーを非表示にする
+          const widgetIcon = shadowRoot.querySelector('#widgetIcon');
+          if (widgetIcon) {
+            widgetIcon.style.display = 'none'; // チャットアイコンを非表示にする
           }
         });
+
+        // const dfMessenger = document.querySelector('df-messenger');
+        // dfMessenger.addEventListener('df-messenger-loaded', function () {
+        //   const shadowRoot = dfMessenger.shadowRoot;
+        //   const titleBar = shadowRoot.querySelector('df-messenger-titlebar');
+        //   if (titleBar) {
+        //     titleBar.style.display = 'none'; // タイトルバーを非表示にする
+        //   }
+        // });
 
     </script>
 </body>
