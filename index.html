@@ -42,18 +42,26 @@
         language-code="ja"
         expand="true">
     </df-messenger>
-<!--     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const messenger = document.querySelector('df-messenger');
-          if (messenger) {
-            // Shadow DOMが利用可能ならば、その中の要素にアクセス
-            const shadowRoot = messenger.shadowRoot;
-            const titlebar = shadowRoot.querySelector('df-messenger-titlebar');
-            if (titlebar) {
-              titlebar.style.display = 'none'; // タイトルバーを非表示に設定
-            }
+    <script>
+        const dfMessenger = document.querySelector('df-messenger');
+        dfMessenger.addEventListener('df-messenger-loaded', function () {
+          const shadowRoot = dfMessenger.shadowRoot;
+          const titleBar = shadowRoot.querySelector('df-messenger-titlebar');
+          if (titleBar) {
+            titleBar.style.display = 'none'; // タイトルバーを非表示にする
           }
         });
-    </script> -->
+        // document.addEventListener('DOMContentLoaded', () => {
+        //   const messenger = document.querySelector('df-messenger');
+        //   if (messenger) {
+        //     // Shadow DOMが利用可能ならば、その中の要素にアクセス
+        //     const shadowRoot = messenger.shadowRoot;
+        //     const titlebar = shadowRoot.querySelector('df-messenger-titlebar');
+        //     if (titlebar) {
+        //       titlebar.style.display = 'none'; // タイトルバーを非表示に設定
+        //     }
+        //   }
+        // });
+    </script>
 </body>
 </html>
