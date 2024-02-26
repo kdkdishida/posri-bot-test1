@@ -20,3 +20,13 @@
     </df-messenger>
 </body>
 </html>
+<script>
+  window.addEventListener('dfMessengerLoaded', function (event) {
+    const messenger = document.querySelector('df-messenger');
+    const shadowRoot = messenger.shadowRoot || messenger;
+    const closeButton = shadowRoot.querySelector('[aria-label="close"]');
+    if (closeButton) {
+      closeButton.style.display = 'none';
+    }
+  });
+</script>
