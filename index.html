@@ -46,17 +46,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             const dfMessenger = document.querySelector('df-messenger');
             if (dfMessenger) {
-                // Messengerが完全にロードされた後にシャドウDOM内の要素にアクセス
                 dfMessenger.addEventListener('df-messenger-loaded', function() {
                     const shadowRoot = dfMessenger.shadowRoot;
-                    const closeButton = shadowRoot.querySelector('[icon="close"]'); // 閉じるボタンを適切に選択
-                    if (closeButton) {
-                        closeButton.addEventListener('click', function(e) {
-                            e.preventDefault(); // デフォルトの動作を防止
-                            e.stopPropagation(); // イベントの伝播を停止
-                            // ここに閉じるボタンがクリックされた時の処理を記述
-                        }, true); // キャプチャフェーズでリスナーを登録
-                    }
+                    const style = document.createElement('style');
+                    style.textContent = '[icon="close"] { display: none; }'; // 閉じるボタンを非表示にするCSS
+                    shadowRoot.appendChild(style);
                 });
             }
         });
