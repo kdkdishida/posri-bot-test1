@@ -42,6 +42,17 @@
         language-code="ja"
         expand="true">
     </df-messenger>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var closeButton = document.querySelector('#closeIcon');
+            if (closeButton) {
+                closeButton.addEventListener('click', function(e) {
+                    e.preventDefault(); // デフォルトの動作を防止
+                    e.stopPropagation(); // イベントの伝播を停止
+                }, true); // キャプチャフェーズでリスナーを登録
+            }
+        });
+    </script>
 <!--     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const dfMessenger = document.querySelector('df-messenger');
