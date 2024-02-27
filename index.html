@@ -42,15 +42,26 @@
         language-code="ja"
         expand="true">
     </df-messenger>
-<!--     <script>
-        const dfMessenger = document.querySelector('df-messenger');
-        dfMessenger.addEventListener('df-messenger-loaded', function () {
-          const shadowRoot = dfMessenger.shadowRoot;
-          const titleBar = shadowRoot.querySelector('df-messenger-titlebar');
-          if (titleBar) {
-            titleBar.style.display = 'none'; // タイトルバーを非表示にする
-          }
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var closeButton = document.querySelector('#closeIcon');
+            if (closeButton) {
+                closeButton.addEventListener('click', function(e) {
+                    e.preventDefault(); // デフォルトの動作を防止
+                    e.stopPropagation(); // イベントの伝播を停止
+                }, true); // キャプチャフェーズでリスナーを登録
+            }
         });
-    </script> -->
+
+        // const dfMessenger = document.querySelector('df-messenger');
+        // dfMessenger.addEventListener('df-messenger-loaded', function () {
+        // dfMessenger.addEventListener('event-type', function (event) {
+        //   const shadowRoot = dfMessenger.shadowRoot;
+        //   const titleBar = shadowRoot.querySelector('df-messenger-titlebar');
+        //   if (titleBar) {
+        //     titleBar.style.display = 'none'; // タイトルバーを非表示にする
+        //   }
+        // });
+    </script>
 </body>
 </html>
